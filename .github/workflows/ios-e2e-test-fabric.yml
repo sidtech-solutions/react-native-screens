@@ -20,7 +20,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   build:
-    runs-on: macos-26-xlarge
+    runs-on: bladerunner-macos
     timeout-minutes: 90
     env:
       WORKING_DIRECTORY: FabricExample
@@ -73,7 +73,7 @@ jobs:
     # iPhone and iPad suites run in parallel on separate machines, both on the
     # app built once above. fail-fast off, so one failing does not cancel the other.
     needs: build
-    runs-on: macos-26-xlarge
+    runs-on: bladerunner-macos
     timeout-minutes: 90
     strategy:
       fail-fast: false
