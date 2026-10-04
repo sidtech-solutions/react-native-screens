@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 jobs:
   lint-js:
-    runs-on: ubuntu-latest
+    runs-on: bladerunner-linux
     concurrency:
       group: install-and-lint-js-${{ github.ref }}
       cancel-in-progress: true
@@ -28,7 +28,7 @@ jobs:
       - name: Check types
         run: yarn check-types
   lint-android:
-    runs-on: ubuntu-latest
+    runs-on: bladerunner-linux
     concurrency:
       group: install-and-lint-android-${{ github.ref }}
       cancel-in-progress: true
