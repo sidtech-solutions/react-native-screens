@@ -118,7 +118,7 @@ jobs:
           tar -xzf "$RUNNER_TEMP/app/FabricExample-app.tar.gz" -C "$WORKING_DIRECTORY/ios/build/Build/Products"
       - name: Test app
         working-directory: ${{ env.WORKING_DIRECTORY }}
-        run: yarn ${{ matrix.script }}
+        run: yarn ${{ matrix.script }} --maxWorkers 4
       - uses: actions/upload-artifact@v4
         if: ${{ failure() }}
         with:
